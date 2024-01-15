@@ -7,31 +7,28 @@
     "type": "git",
     "url": "git://github.com/derbyjs/derby.git"
   },
-  "main": "dist/index.js",
+  "type": "module",
   "exports": {
-    ".": "./dist/index.js",
-    "./components": "./dist/components.js",
-    "./parsing": "./dist/parsing/index.js",
-    "./templates": "./dist/templates/index.js",
-    "./App": "./dist/App.js",
-    "./AppForServer": "./dist/AppForServer.js",
-    "./server": "./dist/server.js",
-    "./Page": "./dist/Page.js",
+    ".": "./src/index.ts",
+    "./components": "./src/components.ts",
+    "./parsing": "./src/parsing/index.ts",
+    "./templates": "./src/templates/index.ts",
+    "./App": "./src/App.ts",
+    "./AppForServer": "./src/AppForServer.ts",
+    "./server": "./src/server.ts",
+    "./Page": "./src/Page.ts",
     "./test-utils": "./test-utils/index.js",
     "./test-utils/*": "./test-utils/*.js"
   },
   "files": [
-    "dist/",
+    "src/",
     "test-utils/"
   ],
   "scripts": {
-    "build": "node_modules/.bin/tsc",
     "checks": "npm run lint && npm test",
     "lint": "npx eslint src/**/*.js test/**/*.js test-utils/**/*.js",
     "lint:ts": "npx eslint src/**/*.ts",
     "lint:fix": "npm run lint:ts -- --fix",
-    "prepare": "npm run build",
-    "pretest": "npm run build",
     "test": "npx mocha 'test/all/**/*.mocha.js' 'test/dom/**/*.mocha.js' 'test/server/**/*.mocha.js'",
     "test-browser": "node test/server.js"
   },
